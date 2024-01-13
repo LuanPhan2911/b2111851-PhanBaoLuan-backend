@@ -4,9 +4,9 @@ import { contactController } from "../controller/contact.controller.js";
 const router = express.Router();
 router
   .route("/")
-  .get(contactController.create)
+  .post(contactController.create)
   .get(contactController.findAll)
-  .get(contactController.deleteAll);
+  .delete(contactController.deleteAll);
 router.route("/favorite").get(contactController.findAllFavorite);
 router
   .route("/:id")
