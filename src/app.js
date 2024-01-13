@@ -6,6 +6,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api/contact", contactRouter);
+app.get("/", (req, res) => {
+  return res.json({ text: "Hello world" });
+});
 
 //handle error 404
 app.use((req, res, next) => {

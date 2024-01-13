@@ -1,10 +1,10 @@
 const contactController = {
-  create: () => {},
-  findOne: () => {},
-  findAll: () => {},
-  findAllFavorite: () => {},
-  update: () => {},
-  delete: () => {},
-  deleteAll: () => {},
+  create: (req, res) => {},
+  findOne: (req, res) => {},
+  findAll: (req, res) => {},
+  findAllFavorite: (req, res) => {},
+  update: (req, res) => {},
+  delete: (req, res) => {},
+  deleteAll: (req, res) => {},
 };
 export { contactController };
