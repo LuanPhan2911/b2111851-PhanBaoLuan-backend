@@ -7,7 +7,9 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/contact", contactRouter);
 app.get("/", (req, res) => {
-  return res.json({ text: "Hello world" });
+  return res.json({
+    message: "Welcome to contact book app",
+  });
 });
 
 //handle error 404
