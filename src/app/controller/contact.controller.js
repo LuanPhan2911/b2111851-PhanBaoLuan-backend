@@ -10,7 +10,7 @@ const contactController = {
     try {
       const contactService = new ContactService(MongoDB.client);
       const document = await contactService.create(req.body);
-      return res.json({
+      return res.status(200).json({
         data: document,
       });
     } catch (error) {
@@ -25,7 +25,7 @@ const contactController = {
       if (!document) {
         throw new ApiError(404, "Contact not found");
       }
-      return res.json({
+      return res.status(200).json({
         data: document,
       });
     } catch (error) {
@@ -47,7 +47,7 @@ const contactController = {
       } else {
         documents = await contactService.find({});
       }
-      return res.json({
+      return res.status(200).json({
         data: documents,
       });
     } catch (error) {
@@ -59,7 +59,7 @@ const contactController = {
     try {
       let documents = await contactService.findFavorite();
 
-      return res.json({
+      return res.status(200).json({
         data: documents,
       });
     } catch (error) {
@@ -80,7 +80,7 @@ const contactController = {
       if (!document) {
         throw new ApiError(404, "Contact not found");
       }
-      return res.json({
+      return res.status(200).json({
         data: document,
       });
     } catch (error) {
@@ -97,7 +97,7 @@ const contactController = {
       if (!document) {
         throw new ApiError(404, "Contact not found");
       }
-      return res.json({
+      return res.status(200).json({
         message: "Delete contact success",
         data: document,
       });
@@ -109,7 +109,7 @@ const contactController = {
     try {
       const contactService = new ContactService(MongoDB.client);
       const deletedContact = await contactService.deleteAll();
-      return res.json({
+      return res.status(200).json({
         message: `${deletedContact} contact deleted success`,
       });
     } catch (error) {
