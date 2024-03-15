@@ -47,7 +47,6 @@ class ContactService {
   async update({ _id, data }) {
     if (ObjectId.isValid(_id)) {
       _id = new ObjectId(_id);
-      console.log(data);
       const updateData = this.extractContactData(data);
 
       const result = await this.contact.findOneAndUpdate(

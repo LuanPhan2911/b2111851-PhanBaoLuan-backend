@@ -5,13 +5,11 @@ import ApiError from "./app/api.error.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/api/contact", contactRouter);
+app.use(express.static("public"));
 app.get("/", (req, res) => {
-  return res.json({
-    message: "Welcome to contact book app",
-  });
+  return res.send("index.html");
 });
-
+app.use("/api/contact", contactRouter);
 //handle error 404
 app.use((req, res, next) => {
   return next(new ApiError(404, "Resource not found"));
